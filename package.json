@@ -1,6 +1,6 @@
 {
   "name": "jspackset",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "一个集合各种功能高复用的方法包",
   "main": "main/index.js",
   "scripts": {
