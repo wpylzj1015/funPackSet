@@ -35,7 +35,7 @@ function rules(formObj,msgAry){
         }
         ind++;
     }
-    return [true,''];
+    return [true,'',''];
 }
 
 //消息队列自定义判断函数
