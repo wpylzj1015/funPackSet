@@ -50,12 +50,12 @@ class MsgError extends Error{
         if(!(formObj instanceof Object)){
             throw TypeError(formObj + ' no Object error')
         }else if(JSON.stringify(formObj) === '{}'){
-            return [false,'formObj参数异常']
+            return [false,'formObj对象不能为空']
         }
         if(!(msgAry instanceof Array)){
             throw TypeError(msgAry + ' no Array error')
         }else if(JSON.stringify(msgAry) === '[]'){
-            return [false,'msgAry参数异常']
+            return [false,'msgAry数组不能为空']
         }
         return [true,'']
     }
