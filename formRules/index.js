@@ -7,7 +7,7 @@
  * */
 let ind = 0;
 function rules(formObj,msgAry){
-    const typeArr = msgError.typError(formObj,msgAry);
+    const typeArr = MsgError.typError(formObj,msgAry);
     // 判断是否是空表单数据或者空消息队列
     if(!typeArr[0]) return typeArr
     //获取所有formObj的所有key
@@ -44,7 +44,7 @@ function detectionFun(msgAry){
     return msgIndAry
 }
 
-class msgError extends Error{
+class MsgError extends Error{
     // 判断rules传参是否合格
     static typError(formObj,msgAry){
         if(!(formObj instanceof Object)){
