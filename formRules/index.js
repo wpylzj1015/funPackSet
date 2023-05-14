@@ -18,14 +18,20 @@ function rules(formObj,msgAry){
         if(callbackInd.findIndex(item => item == ind) != -1){
             const cbkAry = msgAry[ind](formObj[key]);
             if(!cbkAry[0]){
-                return cbkAry
+                return [...cbkAry,ind]
             }
             ind++;
             continue
         }
         if(!formObj[key]){
             const keyInd = keys.findIndex(item => item == key);
-            return [false,msgAry[keyInd]];
+            return [false,msgAry[keyInd],keyInd];
+            //看当前表单数据是不是对象
+        }else if(formObj[key] instanceof Array){
+            if(formObj[key].length < 1){
+                const keyInd = keys.findIndex(item => item == key);
+                return [false,msgAry[keyInd],keyInd];
+            }
         }
         ind++;
     }
